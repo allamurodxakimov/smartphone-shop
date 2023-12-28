@@ -6,8 +6,8 @@ from pprint import pprint
 def home_keyboard():
     return ReplyKeyboardMarkup(
         [
-            [KeyboardButton('Shop'), KeyboardButton('Card')],
-            [KeyboardButton('About'), KeyboardButton('Contact')],
+            [KeyboardButton('🛍 Shop'), KeyboardButton('🛒 Cart')],
+            [KeyboardButton('ℹ️ About'), KeyboardButton('☎️Contact')],
         ],
         resize_keyboard=True,
     )
@@ -34,7 +34,7 @@ def phones_keyboard(brend: str):
     for phone in phones:
         btn = InlineKeyboardButton(
             text=phone['name'],
-            callback_data=f'phone: {brend} - {phone.doc_id}'
+            callback_data=f'phone:{brend}-{phone.doc_id}'
 
         )
         keyboard_btns.append([btn])
